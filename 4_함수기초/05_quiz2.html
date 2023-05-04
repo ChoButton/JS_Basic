@@ -1,0 +1,35 @@
+<script>
+    /*
+    0. prompt() 구문을 이용해 키와 몸무게를 변수에 저장해 주세요
+    1. 변수에 저장된 키와 몸무게를 인수로 전달받아
+    2. bmi지수를 계산하여 반환함과 동시에
+    3. bmi가 25.0 이상이면 "당신은 과체중입니다."
+       18.5이하면 "당신은 저체중입니다."
+       나머지는 "당신은 정상체중입니다."를 출력하는
+       CalcBMI라는 함수를 정의하고 호출하세요.
+    # bmi계산식 : 몸무게 / (키(m) * 키(m))
+    # 출력 예시 : 
+    "키 -> 178.4cm, 체중 -> 78.2kg의 체질량지수는 24.57입니다."
+    */
+   
+    var hight = parseFloat(prompt(`본인의 키를 입력해 주세요`)); // string 으로 받아짐
+    var weight = parseFloat(prompt(`본인의 몸무게를 입력해 주세요`));
+    CalcBMI(hight, weight);
+    function CalcBMI(hight, weight){
+        var intHight = hight;
+        var intWeight = weight;
+        var BMI = intWeight / (((intHight/100) * (intHight/100)));
+        alert(`키 -> ${intHight}cm, 몸무게 -> ${intWeight}kg의 체질량 지수는 ${BMI}입니다.`)
+        if(BMI >= 25.0){
+            alert(`당신은 과체중입니다.`);
+        }else if(BMI <= 18.5){
+            alert(`당신은 저체중 입니다.`);
+        }else{
+            alert(`당신은 정상체중 입니다.`);
+        }
+        return BMI;
+    }
+
+    
+
+</script>
